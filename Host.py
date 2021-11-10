@@ -31,7 +31,8 @@ def serial_handler(ser, servo_motor):
     current_sec = now.strftime("%S")
 
     if current_min in move_list_min and current_sec in move_list_sec:
-        print(current_min)
+        print("Minute:" + current_min)
+        print("Sekunde:" + current_sec)
         print("Servo move")
         servo_motor.move_angle(10)
         servo_motor.move_angle(0)
