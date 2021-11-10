@@ -1,27 +1,31 @@
 import RPi.GPIO as GPIO
 import time
-def servo():
 
-  servoPIN = 17
-  GPIO.setmode(GPIO.BCM)
-  GPIO.setup(servoPIN, GPIO.OUT)
+class Servo_class:
+  def __init__(self, servoPIN , frequency = 50):
+    self.servoPIN = servoPIN
+    self.pwm = GPIO.PWM(servoPIN, frequency)
+    self.GPIO = GPIO
+  def move(self):
 
-  p = GPIO.PWM(servoPIN, 50) # GPIO 17 als PWM mit 50Hz
-  p.start(5) # Initialisierung
-  try:
-    p.ChangeDutyCycle(0)
+    self.GPIO.setmode(GPIO.BCM)
+    self.GPIO.setup(self.servoPIN, GPIO.OUT)
+    # p =  # GPIO 17 als PWM mit 50Hz
+    self.pwm.start(5) # Initialisierung
+    self.pwm.ChangeDutyCycle(0)
     time.sleep(1)
-    p.ChangeDutyCycle(5)
+    self.pwm.ChangeDutyCycle(5)
     time.sleep(1)
-    p.ChangeDutyCycle(10)
+    self.pwm.ChangeDutyCycle(10)
     time.sleep(1)
-    p.ChangeDutyCycle(5)
+    self.pwm.ChangeDutyCycle(5)
     time.sleep(1)
-    p.stop()
-    GPIO.cleanup()
+    self.pwm.stop()
+    self.GPIO.cleanup()
 
-  except KeyboardInterrupt:
-    p.stop()
-    GPIO.cleanup()
+  def servo_interrupt(self):
+    self.pwm.stop()
+    self.GPIO.cleanup()
 
 # comment
+
