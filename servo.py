@@ -24,7 +24,7 @@ class Servo_class:
 
   def servo_interrupt(self):
     self.pwm.stop()
-    self.GPIO.cleanup()
+    GPIO.cleanup()
 
 # comment
 
