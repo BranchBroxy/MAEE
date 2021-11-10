@@ -21,6 +21,13 @@ class Servo_class:
     time.sleep(1)
     self.pwm.stop()
     GPIO.cleanup()
+  def move_angle(self, angle):
+    self.pwm.start(5)  # Initialisierung
+    time.sleep(0.5)
+    self.pwm.ChangeDutyCycle(angle)
+    time.sleep(1)
+    self.pwm.stop()
+    GPIO.cleanup()
 
   def servo_interrupt(self):
     self.pwm.stop()

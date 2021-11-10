@@ -23,9 +23,9 @@ def serial_handler(ser, servo_motor):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
 
-    if current_time == "11:23:00":
+    if current_time == "11:26:20":
         print("Servo move")
-        servo_motor.move()
+        servo_motor.move_angle(10)
     else:
         time_message = "M117 " + current_time + "\r\n"
         ser.write(time_message.encode())
