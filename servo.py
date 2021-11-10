@@ -4,12 +4,11 @@ import time
 class Servo_class:
   def __init__(self, servoPIN , frequency = 50):
     self.servoPIN = servoPIN
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(self.servoPIN, GPIO.OUT)
     self.pwm = GPIO.PWM(servoPIN, frequency)
-    self.GPIO = GPIO
+    # self.GPIO = GPIO
   def move(self):
-
-    self.GPIO.setmode(GPIO.BCM)
-    self.GPIO.setup(self.servoPIN, GPIO.OUT)
     # p =  # GPIO 17 als PWM mit 50Hz
     self.pwm.start(5) # Initialisierung
     self.pwm.ChangeDutyCycle(0)
