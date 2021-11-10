@@ -19,16 +19,18 @@ def serial_handler_1(ser):
     ser.close()
 
 move_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"]
-move_list = ["50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
+move_list_min = ["50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
+move_list_sec = ["00"]
 
 def serial_handler(ser, servo_motor):
     # servo()
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    current_hour = now.strftime("%M")
+    current_hour = now.strftime("%H")
     current_min = now.strftime("%M")
+    current_sec = now.strftime("%S")
 
-    if current_min in move_list:
+    if current_min in move_list_min and current_sec in move_list_sec:
         print(current_min)
         print("Servo move")
         servo_motor.move_angle(10)
