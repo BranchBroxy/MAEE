@@ -23,13 +23,14 @@ def serial_handler(ser, servo_motor):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
 
-    if current_time == "11:21:00":
+    if current_time == "11:23:00":
         print("Servo move")
         servo_motor.move()
-    time_message = "M117 " + current_time + "\r\n"
-    ser.write(time_message.encode())
-    print("Current Time =", current_time)
-    time.sleep(1)
+    else:
+        time_message = "M117 " + current_time + "\r\n"
+        ser.write(time_message.encode())
+        print("Current Time =", current_time)
+        time.sleep(1)
 
 try:
     ser = serial.Serial('/dev/ttyUSB0', 250000)  # open serial port

@@ -20,7 +20,7 @@ class Servo_class:
     self.pwm.ChangeDutyCycle(5)
     time.sleep(1)
     self.pwm.stop()
-    self.GPIO.cleanup()
+    GPIO.cleanup()
 
   def servo_interrupt(self):
     self.pwm.stop()
