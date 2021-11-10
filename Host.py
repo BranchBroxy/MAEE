@@ -39,5 +39,6 @@ ser.write(message.encode())
 time.sleep(2)  # sleep 2 sec
 while True:
     serial_handler(ser)
+    # comment
 
 ser.close()
