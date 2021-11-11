@@ -45,6 +45,7 @@ def serial_handler(ser, servo_motor):
         time.sleep(1)
         servo_motor.move_angle(135)
         time.sleep(1)
+        servo_motor.move_angle(0)
         #servo_motor.move_duty_cycle(1)
     else:
         time_message = "M117 " + current_time + "\r\n"
