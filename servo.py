@@ -24,7 +24,7 @@ class Servo_class:
     GPIO.cleanup()
 
   def move_duty_cycle(self, angle):
-    self.pwm.start(0)  # Initialisierung
+    self.pwm.start(5)  # Initialisierung
     print("Here")
     time.sleep(0.2)
     self.pwm.ChangeDutyCycle(angle)
