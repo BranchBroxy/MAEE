@@ -25,6 +25,7 @@ class Servo_class:
 
   def move_duty_cycle(self, angle):
     self.pwm.start(0)  # Initialisierung
+    print("Here")
     time.sleep(0.2)
     self.pwm.ChangeDutyCycle(angle)
     time.sleep(0.5)
