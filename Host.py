@@ -19,8 +19,9 @@ def serial_handler_1(ser):
     ser.close()
 
 move_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"]
-# move_list_min = ["50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
+# move_list_min = ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
 move_list_min = list(range(00, 60))
+move_list_min = ''.join(str(e) for e in move_list_min)
 move_list_sec = ["00"]
 
 def serial_handler(ser, servo_motor):
