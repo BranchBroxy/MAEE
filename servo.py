@@ -8,6 +8,7 @@ class Servo_class:
     GPIO.setup(self.servoPIN, GPIO.OUT)
     self.pwm = GPIO.PWM(servoPIN, frequency)
     # self.GPIO = GPIO
+
   def move(self):
     # p =  # GPIO 17 als PWM mit 50Hz
     self.pwm.start(5) # Initialisierung
@@ -21,11 +22,12 @@ class Servo_class:
     time.sleep(1)
     self.pwm.stop()
     GPIO.cleanup()
-  def move_angle(self, angle):
-    self.pwm.start(5)  # Initialisierung
-    time.sleep(0.5)
+
+  def move_duty_cycle(self, angle):
+    self.pwm.start(0)  # Initialisierung
+    time.sleep(0.2)
     self.pwm.ChangeDutyCycle(angle)
-    time.sleep(1)
+    time.sleep(0.5)
     self.pwm.stop()
     GPIO.cleanup()
 

@@ -19,7 +19,8 @@ def serial_handler_1(ser):
     ser.close()
 
 move_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"]
-move_list_min = ["50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
+# move_list_min = ["50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
+move_list_min = list(range(00, 60))
 move_list_sec = ["00"]
 
 def serial_handler(ser, servo_motor):
@@ -34,9 +35,11 @@ def serial_handler(ser, servo_motor):
         print("Minute:" + current_min)
         print("Sekunde:" + current_sec)
         print("Servo move")
-        servo_motor.move_angle(10)
+        servo_motor.move_duty_cycle(0)
         time.sleep(1)
-        servo_motor.move_angle(0)
+        servo_motor.move_duty_cycle(10)
+        time.sleep(1)
+        servo_motor.move_duty_cycle(0)
     else:
         time_message = "M117 " + current_time + "\r\n"
         ser.write(time_message.encode())
@@ -47,6 +50,7 @@ try:
     ser = serial.Serial('/dev/ttyUSB0', 250000)  # open serial port
     servo_motor = Servo_class(17)
     print(ser.name)  # check which port was really used
+    print(move_list_min)
     time.sleep(10)      # sleep 10 sec
     message = "M117 MAEE ready\r\n"
     ser.write(message.encode())
