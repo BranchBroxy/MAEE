@@ -36,11 +36,11 @@ def serial_handler(ser, servo_motor):
         print("Minute:" + current_min)
         print("Sekunde:" + current_sec)
         print("Servo move")
-        servo_motor.move_duty_cycle(0)
+        servo_motor.move_duty_cycle(1)
         time.sleep(1)
         servo_motor.move_duty_cycle(10)
         time.sleep(1)
-        servo_motor.move_duty_cycle(0)
+        servo_motor.move_duty_cycle(1)
     else:
         time_message = "M117 " + current_time + "\r\n"
         ser.write(time_message.encode())
