@@ -22,7 +22,7 @@ move_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"]
 # move_list_min = ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
 move_list_min = list(range(00, 60))
 move_list_min = ''.join(str(e) for e in move_list_min)
-move_list_sec = ["00"]
+move_list_sec = ["00", "15", "30", "45"]
 
 def serial_handler(ser, servo_motor):
     # servo()
@@ -36,11 +36,12 @@ def serial_handler(ser, servo_motor):
         print("Minute:" + current_min)
         print("Sekunde:" + current_sec)
         print("Servo move")
-        servo_motor.move_duty_cycle(1)
-        time.sleep(1)
+        #servo_motor.move_duty_cycle(1)
+        #time.sleep(1)
         servo_motor.move_duty_cycle(10)
         time.sleep(1)
-        servo_motor.move_duty_cycle(1)
+        servo_motor.move_duty_cycle(20)
+        #servo_motor.move_duty_cycle(1)
     else:
         time_message = "M117 " + current_time + "\r\n"
         ser.write(time_message.encode())
