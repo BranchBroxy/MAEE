@@ -42,7 +42,7 @@ def serial_handler(ser, servo_motor):
         time.sleep(2)
         servo_motor.move_angle(117)
         time.sleep(2)
-        servo_motor.move_angle(135)
+        servo_motor.move_angle(137)
         time.sleep(2)
         servo_motor.move_angle(0)
         #servo_motor.move_duty_cycle(1)
