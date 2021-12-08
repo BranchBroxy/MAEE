@@ -42,7 +42,7 @@ def serial_handler(ser, servo_motor, head):
 try:
     ser = serial.Serial('/dev/ttyUSB0', 250000)  # open serial port
     servo_motor = Servo_class(servoPIN=17)
-    head = move_class
+    head = move_class()
     head.init_head(serial=ser)
     print(ser.name)  # check which port was really used
     print(move_list_min)
