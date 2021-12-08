@@ -2,6 +2,9 @@
 
 class move_class():
 
+    def __init__(self):
+        pass
+
     def init_head(self, serial):
         serial.write("G28")
 
