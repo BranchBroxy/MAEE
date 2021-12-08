@@ -25,7 +25,6 @@ def serial_handler(ser, servo_motor, head):
         #servo_motor.move_duty_cycle(1)
         #time.sleep(1)
         head.move_head(ser, 10, 10, 10)
-        print("G28")
         servo_motor.move_angle(0)
         time.sleep(2)
         servo_motor.move_angle(117)
