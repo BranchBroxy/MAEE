@@ -1,4 +1,4 @@
-
+import time
 
 class move_class():
 
@@ -11,3 +11,4 @@ class move_class():
         move_string = "G0" + "X" + str(x) + "Y" + str(y) + "Z" + str(z) + "\r\n"
         print(move_string)
         serial.write(move_string.encode())
+        time.sleep(5)

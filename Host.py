@@ -24,7 +24,7 @@ def serial_handler(ser, servo_motor, head):
         print("Servo move")
         #servo_motor.move_duty_cycle(1)
         #time.sleep(1)
-        head.move_head(ser, 10, 10, 10)
+        head.move_head(ser, 110, 110, 10)
         servo_motor.move_angle(0)
         time.sleep(2)
         servo_motor.move_angle(117)
@@ -32,6 +32,7 @@ def serial_handler(ser, servo_motor, head):
         servo_motor.move_angle(137)
         time.sleep(2)
         servo_motor.move_angle(0)
+        head.move_head(ser, 100, 100, 15)
         #servo_motor.move_duty_cycle(1)
     else:
         time_message = "M117 " + current_time + "\r\n"
