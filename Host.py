@@ -2,21 +2,7 @@ import serial
 import time
 from servo import Servo_class
 from datetime import datetime
-
-
-def serial_handler_1(ser):
-    print(ser.name)  # check which port was really used
-    time.sleep(10)      # sleep 10 sec
-    message = "M117 MAEE ready\r\n"
-    ser.write(message.encode())
-    # ser.write(b"M117 Helloy\r\n")
-    time.sleep(2) # sleep 2 sec
-    #servo()
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    print("Current Time =", current_time)
-    time.sleep(1)
-    ser.close()
+from xyz import move_class
 
 move_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"]
 # move_list_min = ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
@@ -24,7 +10,7 @@ move_list_min = list(range(00, 60))
 move_list_min = ''.join(str(e) for e in move_list_min)
 move_list_sec = ["00", "15", "30", "45"]
 
-def serial_handler(ser, servo_motor):
+def serial_handler(ser, servo_motor, head):
     # servo()
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
@@ -38,6 +24,7 @@ def serial_handler(ser, servo_motor):
         print("Servo move")
         #servo_motor.move_duty_cycle(1)
         #time.sleep(1)
+        head.move_head(ser, 10, 10, 10)
         servo_motor.move_angle(0)
         time.sleep(2)
         servo_motor.move_angle(117)
@@ -54,7 +41,9 @@ def serial_handler(ser, servo_motor):
 
 try:
     ser = serial.Serial('/dev/ttyUSB0', 250000)  # open serial port
-    servo_motor = Servo_class(17)
+    servo_motor = Servo_class(servoPIN=17)
+    head = move_class
+    head.init_head(ser)
     print(ser.name)  # check which port was really used
     print(move_list_min)
     time.sleep(10)      # sleep 10 sec
@@ -63,7 +52,7 @@ try:
     # ser.write(b"M117 Helloy\r\n")
     time.sleep(2)  # sleep 2 sec
     while True:
-        serial_handler(ser, servo_motor)
+        serial_handler(ser, servo_motor, head)
         # comment
 
 except KeyboardInterrupt:
