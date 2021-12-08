@@ -21,7 +21,7 @@ class Servo_class:
     self.pwm.ChangeDutyCycle(5)
     time.sleep(1)
     self.pwm.stop()
-    GPIO.cleanup()
+    GPIO.cleanup() #not
 
   def move_duty_cycle(self, duty_cycle):
     self.pwm.start(2.5)  # Initialisierung
