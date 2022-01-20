@@ -55,5 +55,19 @@ class Servo_class:
   def zero_pos(self):
     self.move_angle(0)
 
+  def push_routine(self):
+    self.zero_pos()
+    time.sleep(2)
+    self.first_push()
+    time.sleep(2)
+    self.second_push()
+    time.sleep(2)
+    # self.zero_pos()
+
+  def pull_routine(self):
+    self.first_push()
+    time.sleep(2)
+
+
 # comment
 
