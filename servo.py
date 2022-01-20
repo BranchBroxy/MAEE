@@ -34,7 +34,7 @@ class Servo_class:
 
   def move_angle(self, angle):
     self.pwm.start(2.5)  # Initialisierung
-    print("Here")
+    # print("Here")
     duty_cycle = 1/18 * angle + 2.5
     # time.sleep(0.2)
     self.pwm.ChangeDutyCycle(duty_cycle)
