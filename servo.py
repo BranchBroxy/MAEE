@@ -46,5 +46,14 @@ class Servo_class:
     self.pwm.stop()
     GPIO.cleanup()
 
+  def first_push(self):
+    self.move_angle(117)
+
+  def second_push(self):
+    self.move_angle(137)
+
+  def zero_pos(self):
+    self.move_angle(0)
+
 # comment
 
