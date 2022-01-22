@@ -8,8 +8,8 @@ class move_class():
         serial.write(homing_string.encode()) # homing
 
     def move_head(self, serial, x, y, z, f=1500):
-        y = y + 40
-        x = x + 5
+        y = y + 42
+        x = x + 8
         move_string = "G0" + "F" + str(f) + "X" + str(x) + "Y" + str(y) + "Z" + str(z) + "\r\n"
         print(move_string)
         serial.write(move_string.encode())
