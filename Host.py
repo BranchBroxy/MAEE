@@ -26,6 +26,8 @@ def serial_handler(ser, servo_motor, head):
         print("Servo move")
         #servo_motor.move_duty_cycle(1)
         #time.sleep(1)
+
+        # Load
         head.move_head(ser, x=110, y=110, z=30, f=3000)
         time.sleep(1)
         head.move_head(ser, x=110, y=110, z=5, f=1500)
@@ -33,16 +35,17 @@ def serial_handler(ser, servo_motor, head):
         servo_motor.push_routine()
         time.sleep(1)
         head.move_head(ser, x=110, y=110, z=30, f=1500)
-        time.sleep(1)
+        time.sleep(2)
         servo_motor.zero_pos()
 
-        head.move_head(ser, x=20, y=20, z=30, f=3000)
+        # Medium
+        head.move_head(ser, x=0, y=0, z=30, f=3000)
         servo_motor.first_push()
         time.sleep(1)
-        head.move_head(ser, x=20, y=20, z=5, f=1500)
+        head.move_head(ser, x=0, y=0, z=5, f=1500)
         time.sleep(1)
         servo_motor.zero_pos()
-        head.move_head(ser, x=20, y=20, z=30, f=1500)
+        head.move_head(ser, x=0, y=0, z=30, f=1500)
 
 
     else:
