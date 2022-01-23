@@ -51,7 +51,7 @@ class Servo_class:
     self.move_angle(117)
 
   def second_push(self):
-    self.move_angle(137)
+    self.move_angle(136) # 137
 
   def zero_pos(self):
     self.move_angle(0)
