@@ -145,7 +145,7 @@ try:
     head.init_head(serial=ser)
     print(ser.name)  # check which port was really used
     print(move_list_min)
-    time.sleep(10)      # sleep 10 sec
+    time.sleep(30)      # sleep 10 sec
     message = "M117 MAEE ready\r\n"
     ser.write(message.encode())
     # ser.write(b"M117 Helloy\r\n")
