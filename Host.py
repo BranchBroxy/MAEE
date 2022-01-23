@@ -28,18 +28,18 @@ def serial_handler(ser, servo_motor, head):
         #time.sleep(1)
 
         # Empty first MEA
-        head.move_head(ser, x=90, y=90, z=65, f=4000) # x=85, y=85, z=25, f=3000
+        head.move_head(ser, x=90, y=90, z=72, f=4000) # x=85, y=85, z=25, f=3000
         servo_motor.first_push()
         time.sleep(4)
         head.move_head(ser, x=90, y=90, z=5, f=4000)
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(2)
-        head.move_head(ser, x=90, y=90, z=65, f=4000)
+        head.move_head(ser, x=90, y=90, z=72, f=4000)
         time.sleep(10)
 
         # Medium Dump
-        head.move_head(ser, x=180, y=180, z=65, f=4000)
+        head.move_head(ser, x=180, y=180, z=72, f=4000)
         time.sleep(4)
         head.move_head(ser, x=180, y=180, z=10, f=4000)
         time.sleep(10)
@@ -47,13 +47,13 @@ def serial_handler(ser, servo_motor, head):
         time.sleep(2)
         servo_motor.second_push()
         time.sleep(2)
-        head.move_head(ser, x=180, y=180, z=65, f=4000)
+        head.move_head(ser, x=180, y=180, z=72, f=4000)
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(2)
 
         # Medium Load
-        head.move_head(ser, x=30, y=30, z=65, f=4000)
+        head.move_head(ser, x=30, y=30, z=72, f=4000)
         time.sleep(8)
         servo_motor.first_push()
         time.sleep(4)
@@ -61,17 +61,17 @@ def serial_handler(ser, servo_motor, head):
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(2)
-        head.move_head(ser, x=30, y=30, z=65, f=4000)
+        head.move_head(ser, x=30, y=30, z=72, f=4000)
         time.sleep(10)
 
         # First MEA
-        head.move_head(ser, x=90, y=90, z=65, f=4000)
+        head.move_head(ser, x=90, y=90, z=72, f=4000)
         time.sleep(8)
         head.move_head(ser, x=90, y=90, z=4, f=4000)
         time.sleep(10)
         servo_motor.push_routine()
         time.sleep(4)
-        head.move_head(ser, x=85, y=85, z=65, f=4000)
+        head.move_head(ser, x=85, y=85, z=72, f=4000)
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(4)
@@ -80,31 +80,31 @@ def serial_handler(ser, servo_motor, head):
 
         ########### Second MEA #################
         # Empty second MEA
-        head.move_head(ser, x=140, y=90, z=65, f=4000) # x=135, y=85, z=25, f=3000
+        head.move_head(ser, x=140, y=90, z=72, f=4000) # x=135, y=85, z=25, f=3000
         servo_motor.first_push()
         time.sleep(4)
         head.move_head(ser, x=140, y=90, z=4, f=4000)
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(4)
-        head.move_head(ser, x=140, y=90, z=65, f=4000)
+        head.move_head(ser, x=140, y=90, z=72, f=4000)
         time.sleep(10)
 
         # Medium Dump
-        head.move_head(ser, x=180, y=180, z=65, f=4000)
+        head.move_head(ser, x=180, y=180, z=72, f=4000)
         head.move_head(ser, x=180, y=180, z=10, f=4000)
         time.sleep(10)
         servo_motor.first_push()
         time.sleep(2)
         servo_motor.second_push()
         time.sleep(2)
-        head.move_head(ser, x=180, y=180, z=65, f=4000)
+        head.move_head(ser, x=180, y=180, z=72, f=4000)
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(2)
 
         # Medium Load
-        head.move_head(ser, x=30, y=30, z=65, f=4000)
+        head.move_head(ser, x=30, y=30, z=72, f=4000)
         time.sleep(10)
         servo_motor.first_push()
         time.sleep(4)
@@ -112,23 +112,23 @@ def serial_handler(ser, servo_motor, head):
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(2)
-        head.move_head(ser, x=30, y=30, z=65, f=4000)
+        head.move_head(ser, x=30, y=30, z=72, f=4000)
         time.sleep(10)
 
         # Second MEA
-        head.move_head(ser, x=140, y=90, z=65, f=4000)
+        head.move_head(ser, x=140, y=90, z=72, f=4000)
         time.sleep(8)
         head.move_head(ser, x=140, y=90, z=10, f=4000)
         time.sleep(10)
         servo_motor.push_routine()
         time.sleep(4)
-        head.move_head(ser, x=140, y=90, z=65, f=4000)
+        head.move_head(ser, x=140, y=90, z=72, f=4000)
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(4)
 
         # Zero Pos
-        head.move_head(ser, x=50, y=50, z=65, f=4000)
+        head.move_head(ser, x=50, y=50, z=72, f=4000)
         servo_motor.zero_pos()
 
 
