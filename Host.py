@@ -28,14 +28,14 @@ def serial_handler(ser, servo_motor, head):
         #time.sleep(1)
 
         # Empty first MEA
-        head.move_head(ser, x=85, y=85, z=25, f=3000)
+        head.move_head(ser, x=90, y=90, z=25, f=3000) # x=85, y=85, z=25, f=3000
         servo_motor.first_push()
         time.sleep(5)
-        head.move_head(ser, x=85, y=85, z=8, f=1500)
+        head.move_head(ser, x=90, y=90, z=5, f=1500)
         time.sleep(5)
         servo_motor.zero_pos()
         time.sleep(5)
-        head.move_head(ser, x=85, y=85, z=25, f=3000)
+        head.move_head(ser, x=90, y=90, z=25, f=3000)
 
         # Medium Dump
         head.move_head(ser, x=180, y=180, z=25, f=3000)
@@ -55,7 +55,7 @@ def serial_handler(ser, servo_motor, head):
         time.sleep(10)
         servo_motor.first_push()
         time.sleep(5)
-        head.move_head(ser, x=30, y=30, z=10, f=1500)
+        head.move_head(ser, x=30, y=30, z=5, f=1500)
         time.sleep(5)
         servo_motor.zero_pos()
         time.sleep(2)
@@ -63,9 +63,9 @@ def serial_handler(ser, servo_motor, head):
         time.sleep(5)
 
         # First MEA
-        head.move_head(ser, x=85, y=85, z=25, f=3000)
+        head.move_head(ser, x=90, y=90, z=25, f=3000)
         time.sleep(10)
-        head.move_head(ser, x=85, y=85, z=10, f=1500)
+        head.move_head(ser, x=90, y=90, z=5, f=1500)
         time.sleep(5)
         servo_motor.push_routine()
         time.sleep(5)
@@ -78,14 +78,14 @@ def serial_handler(ser, servo_motor, head):
 
         ########### Second MEA #################
         # Empty second MEA
-        head.move_head(ser, x=135, y=85, z=25, f=3000)
+        head.move_head(ser, x=140, y=90, z=25, f=3000) # x=135, y=85, z=25, f=3000
         servo_motor.first_push()
         time.sleep(5)
-        head.move_head(ser, x=135, y=85, z=8, f=1500)
+        head.move_head(ser, x=140, y=90, z=4, f=1500)
         time.sleep(5)
         servo_motor.zero_pos()
         time.sleep(5)
-        head.move_head(ser, x=135, y=85, z=25, f=3000)
+        head.move_head(ser, x=140, y=90, z=25, f=3000)
 
         # Medium Dump
         head.move_head(ser, x=180, y=180, z=25, f=3000)
@@ -105,7 +105,7 @@ def serial_handler(ser, servo_motor, head):
         time.sleep(10)
         servo_motor.first_push()
         time.sleep(5)
-        head.move_head(ser, x=30, y=30, z=10, f=1500)
+        head.move_head(ser, x=30, y=30, z=5, f=1500)
         time.sleep(5)
         servo_motor.zero_pos()
         time.sleep(2)
@@ -113,13 +113,13 @@ def serial_handler(ser, servo_motor, head):
         time.sleep(5)
 
         # Second MEA
-        head.move_head(ser, x=135, y=85, z=25, f=3000)
+        head.move_head(ser, x=140, y=90, z=25, f=3000)
         time.sleep(10)
-        head.move_head(ser, x=135, y=85, z=10, f=1500)
+        head.move_head(ser, x=140, y=90, z=10, f=1500)
         time.sleep(5)
         servo_motor.push_routine()
         time.sleep(5)
-        head.move_head(ser, x=135, y=85, z=25, f=1500)
+        head.move_head(ser, x=140, y=90, z=25, f=1500)
         time.sleep(5)
         servo_motor.zero_pos()
         time.sleep(5)
