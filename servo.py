@@ -43,6 +43,7 @@ class Servo_class:
     # GPIO.cleanup()
 
   def servo_interrupt(self):
+    self.zero_pos()
     self.pwm.stop()
     GPIO.cleanup()
 
