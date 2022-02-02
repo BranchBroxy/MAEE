@@ -32,7 +32,7 @@ def serial_handler(ser, servo_motor, head):
         head.move_head(ser, x=100, y=100, z=25, f=1000) # x=85, y=85, z=25, f=3000
         servo_motor.first_push()
         time.sleep(5)
-        head.move_head(ser, x=100, y=100, z=5.85, f=1000)
+        head.move_head(ser, x=100, y=100, z=6, f=1000)
         time.sleep(5)
         servo_motor.zero_pos()
         time.sleep(2)
@@ -58,7 +58,7 @@ def serial_handler(ser, servo_motor, head):
         time.sleep(8)
         servo_motor.first_push()
         time.sleep(4)
-        head.move_head(ser, x=40, y=40, z=5.85, f=1000)
+        head.move_head(ser, x=40, y=40, z=6, f=1000)
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(2)
@@ -68,7 +68,7 @@ def serial_handler(ser, servo_motor, head):
         # First MEA
         head.move_head(ser, x=100, y=100, z=25, f=1000)
         time.sleep(8)
-        head.move_head(ser, x=100, y=100, z=5.85, f=1000)
+        head.move_head(ser, x=100, y=100, z=6, f=1000)
         time.sleep(10)
         servo_motor.push_routine()
         time.sleep(4)
@@ -84,7 +84,7 @@ def serial_handler(ser, servo_motor, head):
         head.move_head(ser, x=150, y=100, z=25, f=1000) # x=135, y=85, z=25, f=3000
         servo_motor.first_push()
         time.sleep(4)
-        head.move_head(ser, x=150, y=100, z=5.85, f=1000)
+        head.move_head(ser, x=150, y=100, z=6, f=1000)
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(4)
@@ -109,7 +109,7 @@ def serial_handler(ser, servo_motor, head):
         time.sleep(8)
         servo_motor.first_push()
         time.sleep(4)
-        head.move_head(ser, x=40, y=40, z=5.85, f=1000)
+        head.move_head(ser, x=40, y=40, z=6, f=1000)
         time.sleep(10)
         servo_motor.zero_pos()
         time.sleep(2)
@@ -119,7 +119,7 @@ def serial_handler(ser, servo_motor, head):
         # Second MEA
         head.move_head(ser, x=150, y=100, z=25, f=1000)
         time.sleep(8)
-        head.move_head(ser, x=150, y=100, z=5.85, f=1000)
+        head.move_head(ser, x=150, y=100, z=6, f=1000)
         time.sleep(10)
         servo_motor.push_routine()
         time.sleep(4)
