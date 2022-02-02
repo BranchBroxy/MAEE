@@ -5,7 +5,7 @@ from datetime import datetime
 from xyz import move_class
 
 move_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"]
-move_list_hour = [ "12", "16"]
+move_list_hour = ["12", "16"]
 move_list_min = ["00"]
 # move_list_min = list(range(00, 60))
 # move_list_min = ''.join(str(e) for e in move_list_min)
@@ -137,7 +137,7 @@ def serial_handler(ser, servo_motor, head):
     else:
         time_message = "M117 " + current_time + "\r\n"
         ser.write(time_message.encode())
-        print("Current Time =", current_time)
+        # print("Current Time =", current_time)
         time.sleep(1)
 
 try:
