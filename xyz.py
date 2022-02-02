@@ -3,9 +3,9 @@ import time
 class move_class():
 
     def init_head(self, serial):
-        homing_string = "G28" + "\r\n"
+        homing_string = "M140 S37" + "\r\n"
         print(homing_string)
-        #serial.write(homing_string.encode()) # homing
+        serial.write(homing_string.encode()) # homing
 
     def move_head(self, serial, x, y, z, f=1500):
         y = y + 42
