@@ -6,7 +6,7 @@ from xyz import move_class
 
 move_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"]
 move_list_hour = ["12", "16"]
-move_list_min = ["00"]
+move_list_min = ["28"]
 # move_list_min = list(range(00, 60))
 # move_list_min = ''.join(str(e) for e in move_list_min)
 move_list_sec = ["00"]
