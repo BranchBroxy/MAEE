@@ -5,10 +5,10 @@ from datetime import datetime
 from xyz import move_class
 
 move_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"]
-move_list_hour = ["11", "12", "16"]
+move_list_hour = [ "12", "16"]
 move_list_min = ["00"]
-move_list_min = list(range(00, 60))
-move_list_min = ''.join(str(e) for e in move_list_min)
+# move_list_min = list(range(00, 60))
+# move_list_min = ''.join(str(e) for e in move_list_min)
 move_list_sec = ["00"]
 move_list_day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 # move_list_day = ["Monday", "Wednesday", "Friday", "Sunday"]
