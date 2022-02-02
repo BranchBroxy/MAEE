@@ -5,12 +5,13 @@ from datetime import datetime
 from xyz import move_class
 
 move_list = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"]
-# move_list_min = ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
-move_list_min = list(range(00, 60))
-move_list_min = ''.join(str(e) for e in move_list_min)
+move_list_hour = ["11", "12", "16"]
+move_list_min = ["00"]
+# move_list_min = list(range(00, 60))
+# move_list_min = ''.join(str(e) for e in move_list_min)
 move_list_sec = ["00"]
-# move_list_day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sunday"]
-move_list_day = ["Monday", "Wednesday", "Friday", "Sunday"]
+move_list_day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+# move_list_day = ["Monday", "Wednesday", "Friday", "Sunday"]
 
 def serial_handler(ser, servo_motor, head):
     # servo()
@@ -21,7 +22,7 @@ def serial_handler(ser, servo_motor, head):
     current_min = now.strftime("%M")
     current_sec = now.strftime("%S")
 
-    if current_min in move_list_min and current_sec in move_list_sec and current_day in move_list_day:
+    if current_min in move_list_min and current_sec in move_list_sec and current_day in move_list_day and current_hour in move_list_hour:
         print("Minute:" + current_min)
         print("Sekunde:" + current_sec)
         print("Servo move")
